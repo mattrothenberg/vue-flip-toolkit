@@ -2,21 +2,32 @@
   "name": "vue-flip-toolkit",
   "version": "1.0.0",
   "description": "A Vue.js port of the inimitable react-flip-toolkit",
-  "main": "src/index.js",
+  "main": "dist/vue-flip-toolkit.umd.js",
   "repository": "https://github.com/mattrothenberg/vue-flip-toolkit",
   "author": "Matt Rothenberg",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c rollup.config.js"
+    "build": "rollup -c rollup.config.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "react-flip-toolkit": "^6.5.8"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@storybook/addon-actions": "^5.0.6",
+    "@storybook/addon-links": "^5.0.6",
+    "@storybook/addons": "^5.0.6",
+    "@storybook/vue": "^5.0.6",
+    "babel-loader": "^8.0.5",
+    "babel-preset-vue": "^2.0.2",
     "rollup": "^1.9.3",
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-node-resolve": "^4.2.2",
     "rollup-plugin-vue": "^4.7.2",
+    "vue": "^2.6.10",
+    "vue-loader": "^15.7.0",
     "vue-template-compiler": "^2.6.10"
   }
 }
