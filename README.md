@@ -45,6 +45,27 @@ This library strives to imitate its parent, `react-flip-toolkit`, as closely as 
 | @on-start | `{el: DOMElement, id: String}` | Emitted when the `flipped` animation begins. |
 | @on-complete | `{el: DOMElement, id: String}` | Emitted when the `flipped` animation begins. |
 
+## Cool, so how do I use it?
+
+Import the respective components.
+
+```js
+import { Flipper, Flipped } from "vue-flip-toolkit";
+```
+
+Register the components.
+```vue
+// Example.vue
+<script>
+  export default {
+    components: {
+      Flipped,
+      Flipper
+    }
+  }
+</script>
+```
+
 ## OK, time for some examples.
 
 You got it.
