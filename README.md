@@ -47,6 +47,11 @@ This library strives to imitate its parent, `react-flip-toolkit`, as closely as 
 
 ## Cool, so how do I use it?
 
+Install the library
+```bash
+yarn add vue-flip-toolkit
+```
+
 Import the respective components.
 
 ```js
