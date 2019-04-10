@@ -17,6 +17,7 @@ This library strives to imitate its parent, `react-flip-toolkit`, as closely as 
 > The parent wrapper component that contains all the elements to be animated. You'll most typically need only one of these per page. [Read more –>](https://github.com/aholachek/react-flip-toolkit/blob/master/README.md#basic-props)
 
 **Props**
+
 | prop | default | type | details |
 |--------------------|------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `flipKey` **(required)** | – | `string` | Changing this tells `vue-flip-toolkit` to transition child elements wrapped in Flipped components. |
@@ -38,6 +39,7 @@ This library strives to imitate its parent, `react-flip-toolkit`, as closely as 
 | `shouldFlip`            | –       | `function` | A function provided with the current and previous decisionData props passed down by the `Flipper` component. Returns a `boolean` to indicate whether a `Flipped` component should animate at that particular moment or not.                                                                                                                                     |
 
 **Events**
+
 | eventName | args | details |
 |--------------|--------------------------------|----------------------------------------------|
 | @on-start | `{el: DOMElement, id: String}` | Emitted when the `flipped` animation begins. |
