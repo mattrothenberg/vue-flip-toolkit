@@ -81,19 +81,19 @@ You got it.
 
 <img width="600" src="https://i.imgur.com/CQmQwjA.gif" />
 
-### 1) Two Divs
+### 2) Two Divs
 
 [Source](stories/Double.vue)
 
 <img width="600" src="https://i.imgur.com/XeuEjHP.gif" />
 
-### 1) List Shuffle Animation
+### 3) List Shuffle Animation
 
 [Source](stories/List.vue)
 
 <img width="600" src="https://i.imgur.com/PWGSyKm.gif" />
 
-### 1) Advanced Accordion
+### 4) Advanced Accordion
 
 [Source](stories/Accordion.vue)
 [Fantastic Tutorial](https://alex.holachek.com/rft-tutorial/)
