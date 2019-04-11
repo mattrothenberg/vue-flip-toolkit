@@ -1,6 +1,9 @@
 <template>
-  <div class="about">
-    <button @click="trigger">Trigger</button>
+  <div class="about p-4">
+    <button
+      class="bg-grey text-grey-darkest uppercase text-xs font-bold tracking-wide p-2"
+      @click="trigger"
+    >Trigger Animation</button>
     <Flipper :flipKey="flipKey">
       <Flipped flipId="square">
         <div class="square" :class="squareClass"></div>
