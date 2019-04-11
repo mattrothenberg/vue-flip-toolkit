@@ -805,6 +805,22 @@
     react-inspector "^2.3.0"
     uuid "^3.3.2"
 
+"@storybook/addon-backgrounds@^5.0.6":
+  version "5.0.6"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-backgrounds/-/addon-backgrounds-5.0.6.tgz#34c41c2d85de43b96c7b92d935a1321ba91f57e8"
+  integrity sha512-O0E4GXalGNtN/phIVAaVybW/tQMoS1JCWg8pt9Vks6rqGulUrf1+9Cnhc8d16a62RLvIpn2M04LnuCZMR8JZ2Q==
+  dependencies:
+    "@storybook/addons" "5.0.6"
+    "@storybook/client-logger" "5.0.6"
+    "@storybook/components" "5.0.6"
+    "@storybook/core-events" "5.0.6"
+    "@storybook/theming" "5.0.6"
+    core-js "^2.6.5"
+    global "^4.3.2"
+    memoizerific "^1.11.3"
+    react "^16.8.1"
+    util-deprecate "^1.0.2"
+
 "@storybook/addon-links@^5.0.6":
   version "5.0.6"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-5.0.6.tgz#8c6dae2d31df8dc0f1988b6f3fd0ffaf7ad0e482"
@@ -1350,6 +1366,11 @@ ajv@^6.1.0:
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
+
+animejs@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/animejs/-/animejs-3.0.1.tgz#8b808bad575e3b6106489d8b04b92bc4062166fe"
+  integrity sha512-7mMoBQScvA7s4zm3EVgnuXXrtOu6TJNAhU+Ajo7HsXYH0NwbuZIcRHMO65a9NyUlmAXz4VPxlK5cENNOQbCi8g==
 
 ansi-align@^3.0.0:
   version "3.0.0"
@@ -6602,6 +6623,11 @@ statuses@~1.4.0:
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.4.0.tgz#bb73d446da2796106efcc1b601a253d6c46bd087"
   integrity sha512-zhSCtt8v2NDrRlPQpCNtw/heZLtfUDqxBM1udqikb/Hbk52LK4nQSwr10u77iopCW5LsyHpuXS0GnEc48mLeew==
 
+storybook-vue-router@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/storybook-vue-router/-/storybook-vue-router-1.0.3.tgz#b8fb690abab470f62d848b7c53cc90132eef94eb"
+  integrity sha512-g2e3hJGTbX+5J+chBy777y9TGcHW3Pra9P4MWy/1d7VQ+9D1qGPpy6uAl8VUE13avNQBSia0GWf2rHQwa+Fszw==
+
 stream-browserify@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/stream-browserify/-/stream-browserify-2.0.2.tgz#87521d38a44aa7ee91ce1cd2a47df0cb49dd660b"
@@ -7201,6 +7227,11 @@ vue-loader@^15.7.0:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-router@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.3.tgz#370ca607475c45a1cfab2d9d2ac846feab1c534c"
+  integrity sha512-62rB6GjJuyklnLL+yKST469yCYj93SXEn8rpYjxgLwv0aH/Fd6OApD8Hgi9RlraZ1OOwv3jPQvZTtf1GixYW+g==
 
 vue-runtime-helpers@1.0.0:
   version "1.0.0"

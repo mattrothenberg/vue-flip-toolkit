@@ -8,8 +8,8 @@
   "license": "MIT",
   "scripts": {
     "build": "rollup -c rollup.config.js",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 6006 -s ./storybook-assets",
+    "build-storybook": "build-storybook -s ./storybook-assets"
   },
   "dependencies": {
     "react-flip-toolkit": "^6.5.8"
@@ -17,17 +17,21 @@
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@storybook/addon-actions": "^5.0.6",
+    "@storybook/addon-backgrounds": "^5.0.6",
     "@storybook/addon-links": "^5.0.6",
     "@storybook/addons": "^5.0.6",
     "@storybook/vue": "^5.0.6",
+    "animejs": "^3.0.1",
     "babel-loader": "^8.0.5",
     "babel-preset-vue": "^2.0.2",
     "rollup": "^1.9.3",
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-node-resolve": "^4.2.2",
     "rollup-plugin-vue": "^4.7.2",
+    "storybook-vue-router": "^1.0.3",
     "vue": "^2.6.10",
     "vue-loader": "^15.7.0",
+    "vue-router": "^3.0.3",
     "vue-template-compiler": "^2.6.10"
   }
 }

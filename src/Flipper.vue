@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="className">
     <slot v-if="ready"></slot>
   </div>
 </template>
@@ -15,6 +15,7 @@ export default {
     };
   },
   props: {
+    className: String,
     spring: {
       type: String,
       default: "noWobble"

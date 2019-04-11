@@ -1972,6 +1972,7 @@
       };
     },
     props: {
+      className: String,
       spring: {
         type: String,
         default: "noWobble"
@@ -2044,7 +2045,12 @@
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
-    return _c("div", [_vm.ready ? _vm._t("default") : _vm._e()], 2)
+    return _c(
+      "div",
+      { class: _vm.className },
+      [_vm.ready ? _vm._t("default") : _vm._e()],
+      2
+    )
   };
   var __vue_staticRenderFns__ = [];
   __vue_render__._withStripped = true;

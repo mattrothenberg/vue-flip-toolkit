@@ -1,8 +1,11 @@
 <template>
-  <div>
+  <div class="p-4">
     <Flipper :flipKey="key">
-      <button @click="shuffle">shuffle</button>
-      <ul class="list">
+      <button
+        class="bg-grey text-grey-darkest uppercase text-xs font-bold tracking-wide p-2"
+        @click="shuffle"
+      >shuffle</button>
+      <ul class="list mt-4">
         <Flipped v-for="num in list" :key="num" :flipId="num.toString()">
           <li>{{num}}</li>
         </Flipped>
