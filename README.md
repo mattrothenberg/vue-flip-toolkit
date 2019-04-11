@@ -30,6 +30,7 @@ This library strives to imitate its parent, `react-flip-toolkit`, as closely as 
 
 | prop                     | default      | type     | details                                                                                                           |
 | ------------------------ | ------------ | -------- | ----------------------------------------------------------------------------------------------------------------- |
+| `className`              | –            | `string` | A class that will apply to the div rendered by `Flipper`                                                          |
 | `flipKey` **(required)** | –            | `string` | Changing this tells `vue-flip-toolkit` to transition child elements wrapped in Flipped components.                |
 | `spring`                 | `"noWobble"` | `string` | Provide a string referencing one of the spring presets — `noWobble`, `veryGentle`, `gentle`, `wobbly`, or `stiff` |
 | `staggerConfig`          | `{}`         | `object` | Provide configuration for staggered Flipped children.                                                             |
