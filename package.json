@@ -1,6 +1,6 @@
 {
   "name": "vue-flip-toolkit",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A Vue.js port of the inimitable react-flip-toolkit",
   "main": "dist/vue-flip-toolkit.umd.js",
   "repository": "https://github.com/mattrothenberg/vue-flip-toolkit",
