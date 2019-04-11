@@ -10,7 +10,11 @@
                 <div class="text-grey">
                   <p class="flow">aspdjipasjdpoajspojasidjiaosjd</p>
                   <p class="flow">aspdjipasjdpoajspojashdiaa</p>
-                  <p class="flow">aspdjipasjdpoajspoja</p>
+                </div>
+                <div class="icon-grid mt-4">
+                  <Flipped v-for="icon in set.icons" :key="icon" :flipId="icon">
+                    <div class="icon bg-grey"></div>
+                  </Flipped>
                 </div>
               </router-link>
             </Flipped>
@@ -23,6 +27,7 @@
 
 <script>
 import Flipped from "../src/Flipped";
+import iconData from "./icon-data";
 export default {
   name: "IconsHome",
   components: {
@@ -30,24 +35,13 @@ export default {
   },
   data() {
     return {
-      iconSets: [
-        {
-          slug: "sports",
-          label: "Sports Icons",
-          count: 24
-        },
-        {
-          slug: "science",
-          label: "Science Icons",
-          count: 30
-        }
-      ]
+      iconSets: iconData
     };
   }
 };
 </script>
 
-<style scoped>
+<style>
 .flow {
   font-family: "flow";
 }
@@ -63,5 +57,19 @@ export default {
 .card {
   background: white;
   height: 200px;
+}
+
+.icon {
+  display: inline-block;
+  margin: 0 auto;
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 16px;
 }
 </style>
