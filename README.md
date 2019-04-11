@@ -1,12 +1,22 @@
 ## vue-flip-toolkit
 
-A Vue.js port of the wonderful [`react-flip-toolkit`](https://github.com/aholachek/react-flip-toolkit), developed by [@aholachek](https://github.com/aholachek).
+A Vue.js port of the wonderful [`react-flip-toolkit`](https://github.com/aholachek/react-flip-toolkit), developed by [@aholachek](https://github.com/aholachek) (to whom all credit is due here)
+
+## Quick Start
+
+```bash
+yarn add vue-flip-toolkit
+```
+
+Wrap the components you wish to animate with a _single_ `Flipper` component that has a `flipKey` prop. This prop must change every time you want an animation to happen.
+
+Wrap elements that should be animated with `Flipped` components that have a `flipId` prop matching them across renders.
+
+A basic example can be found here: https://codesandbox.io/s/m354w1mmp9
 
 ## Why even port this to Vue.js?
 
 Fair question. In developing my own library, [`vue-overdrive`](https://github.com/mattrothenberg/vue-overdrive), I've felt the pain of not being able to find a declarative library for animating a given DOM element between two states. Upon discovering `react-flip-toolkit`, which has a first-class "core" API that can be used outside of React, I wanted to take a crack at using it to re-implement `vue-overdrive`. The fruit of my attempt is the following library, `vue-flip-toolkit`.
-
-All the credit goes to [@aholachek](https://github.com/aholachek), here.
 
 ## What's in this library?
 
@@ -18,11 +28,11 @@ This library strives to imitate its parent, `react-flip-toolkit`, as closely as 
 
 **Props**
 
-| prop | default | type | details |
-|--------------------|------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `flipKey` **(required)** | – | `string` | Changing this tells `vue-flip-toolkit` to transition child elements wrapped in Flipped components. |
-| `spring` | `"noWobble"` | `string` | Provide a string referencing one of the spring presets — `noWobble`, `veryGentle`, `gentle`, `wobbly`, or `stiff` |
-| `staggerConfig` | `{}` | `object` | Provide configuration for staggered Flipped children.|
+| prop                     | default      | type     | details                                                                                                           |
+| ------------------------ | ------------ | -------- | ----------------------------------------------------------------------------------------------------------------- |
+| `flipKey` **(required)** | –            | `string` | Changing this tells `vue-flip-toolkit` to transition child elements wrapped in Flipped components.                |
+| `spring`                 | `"noWobble"` | `string` | Provide a string referencing one of the spring presets — `noWobble`, `veryGentle`, `gentle`, `wobbly`, or `stiff` |
+| `staggerConfig`          | `{}`         | `object` | Provide configuration for staggered Flipped children.                                                             |
 
 ### Flipped.vue
 
@@ -40,14 +50,15 @@ This library strives to imitate its parent, `react-flip-toolkit`, as closely as 
 
 **Events**
 
-| eventName | args | details |
-|--------------|--------------------------------|----------------------------------------------|
-| @on-start | `{el: DOMElement, id: String}` | Emitted when the `flipped` animation begins. |
+| eventName    | args                           | details                                      |
+| ------------ | ------------------------------ | -------------------------------------------- |
+| @on-start    | `{el: DOMElement, id: String}` | Emitted when the `flipped` animation begins. |
 | @on-complete | `{el: DOMElement, id: String}` | Emitted when the `flipped` animation begins. |
 
 ## Cool, so how do I use it?
 
 Install the library
+
 ```bash
 yarn add vue-flip-toolkit
 ```
@@ -59,15 +70,16 @@ import { Flipper, Flipped } from "vue-flip-toolkit";
 ```
 
 Register the components.
+
 ```vue
 // Example.vue
 <script>
-  export default {
-    components: {
-      Flipped,
-      Flipper
-    }
+export default {
+  components: {
+    Flipped,
+    Flipper
   }
+};
 </script>
 ```
 
@@ -98,10 +110,18 @@ You got it.
 [Source](stories/Accordion.vue)
 [Fantastic Tutorial](https://alex.holachek.com/rft-tutorial/)
 
+### 5) Vue Router Example
+
+This example is very much a WIP. Nonetheless, it illustrates at a high-level how to use `vue-flip-toolkit` with `vue-router`, as well as hook into the `@on-complete` and `@on-start` events.
+
+[Source](stories/IconsHome.vue)
+
+<img width="600" src="https://i.imgur.com/UBVjF4b.gif" />
+
 ## What's next?
 
 A lot.
 
-First and foremost, I want to make sure that this basic set of functionality works for Vue developers, and that the API makes sense.
+Primarily, I want to make sure that this basic set of functionality works for Vue developers, and that the API makes sense.
 
 Once we check that box, I'd like to add support for additional props for both `Flipped` and `Flipper`. Right now, you can't do _too too_ much with them.

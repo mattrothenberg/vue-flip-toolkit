@@ -15,9 +15,16 @@
         </div>
         <div class="p-4">
           <div class="icon-grid mt-4">
-            <Flipped v-for="icon in iconSet.icons" :key="icon" :flipId="icon">
-              <div class="icon bg-grey"></div>
-            </Flipped>
+            <template v-for="icon in iconSet.icons">
+              <Flipped
+                v-if="icon.flipped"
+                :flipId="`${iconSet.slug}-${icon.key}`"
+                :key="`${iconSet.slug}-${icon.key}`"
+              >
+                <div class="icon flipped bg-green"></div>
+              </Flipped>
+              <div v-else class="icon bg-grey" :key="`${iconSet.slug}-${icon.key}`"></div>
+            </template>
           </div>
         </div>
       </div>
@@ -52,12 +59,14 @@ export default {
   methods: {
     handleComplete({ el, id }) {
       this.loaded = true;
-      // const gridItems = el.querySelectorAll(".icon");
-      // anime({
-      //   targets: gridItems,
-      //   opacity: [0, 1],
-      //   delay: anime.stagger(100)
-      // });
+      const nonFlippable = el.querySelectorAll(".icon:not(.flipped)");
+
+      anime({
+        targets: nonFlippable,
+        opacity: [0, 1],
+        duration: 3000,
+        delay: anime.stagger(50)
+      });
     },
     handleHeaderEnter(el, done) {
       anime({
@@ -78,6 +87,10 @@ export default {
 <style scoped>
 .header {
   min-height: 77px;
+}
+
+.icon:not(.flipped) {
+  opacity: 0;
 }
 .card-detail {
   background: white;
