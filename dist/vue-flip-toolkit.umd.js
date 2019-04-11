@@ -1963,8 +1963,6 @@
   }());
 
   //
-  let flipInstance = null;
-
   var script$1 = {
     name: "flipper",
     provide() {
@@ -2017,12 +2015,11 @@
       }
     },
     mounted() {
-      flipInstance = new Flipper({
+      this.flipInstance = new Flipper({
         element: this.$el,
         spring: this.spring,
         ...(this.staggerConfig ? { staggerConfig: this.staggerConfig } : null)
       });
-      this.flipInstance = flipInstance;
       this.ready = true;
     },
     beforeUpdate() {

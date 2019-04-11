@@ -6,22 +6,6 @@
 
 <script>
 import Flipper from "react-flip-toolkit/es/core";
-let flipInstance = null;
-
-const isFlipper = slot => {
-  return slot.componentInstance ? !!slot.componentInstance.flipId : false;
-};
-
-const isInvertedFlipper = slot => {
-  return slot.componentInstance
-    ? !!slot.componentInstance.inverseFlipId
-    : false;
-};
-
-const isParent = slot => {
-  return slot.children && slot.children.length > 0;
-};
-
 export default {
   name: "flipper",
   provide() {
@@ -74,12 +58,11 @@ export default {
     }
   },
   mounted() {
-    flipInstance = new Flipper({
+    this.flipInstance = new Flipper({
       element: this.$el,
       spring: this.spring,
       ...(this.staggerConfig ? { staggerConfig: this.staggerConfig } : null)
     });
-    this.flipInstance = flipInstance;
     this.ready = true;
   },
   beforeUpdate() {
