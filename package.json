@@ -9,7 +9,7 @@
   "scripts": {
     "build": "rollup -c rollup.config.js",
     "storybook": "start-storybook -p 6006 -s ./storybook-assets",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -s ./storybook-assets"
   },
   "dependencies": {
     "react-flip-toolkit": "^6.5.8"
