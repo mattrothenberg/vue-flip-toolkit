@@ -16,12 +16,13 @@ export default {
   },
   props: {
     className: String,
+    decisionData: null,
+    flipKey: [String, Number, Boolean],
+    staggerConfig: Object,
     spring: {
-      type: String,
+      type: [String, Object],
       default: "noWobble"
-    },
-    flipKey: String,
-    staggerConfig: Object
+    }
   },
   data() {
     return {
@@ -37,7 +38,10 @@ export default {
       shouldFlip,
       shouldInvert,
       onStart,
-      onComplete
+      onComplete,
+      opacity,
+      scale,
+      translate
     }) {
       this.flipInstance.addFlipped({
         element,
@@ -46,14 +50,20 @@ export default {
         ...(shouldFlip ? { shouldFlip } : undefined),
         ...(shouldInvert ? { shouldInvert } : undefined),
         ...(onStart ? { onStart } : undefined),
-        ...(onComplete ? { onComplete } : undefined)
+        ...(onComplete ? { onComplete } : undefined),
+        opacity,
+        scale,
+        translate
       });
     },
-    addInvertedElement({ element, parent }) {
+    addInvertedElement({ element, parent, opacity, scale, translate }) {
       this.$nextTick(() => {
         this.flipInstance.addInverted({
           element,
-          parent
+          parent,
+          opacity,
+          scale,
+          translate
         });
       });
     }
