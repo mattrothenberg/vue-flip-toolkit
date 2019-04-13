@@ -114,7 +114,12 @@ You got it.
 [Source](stories/Accordion.vue)
 [Fantastic Tutorial](https://alex.holachek.com/rft-tutorial/)
 
-### 5) Vue Router Example
+### 5) Scale Animation + Anime.js
+[Source](stories/Scale.vue)
+
+<img width="600" src="https://i.imgur.com/BpQvrfG.gif" />
+
+### 6) Vue Router Example
 
 This example is very much a WIP. Nonetheless, it illustrates at a high-level how to use `vue-flip-toolkit` with `vue-router`, as well as hook into the `@on-complete` and `@on-start` events.
 
