@@ -1,6 +1,6 @@
 <template>
   <div class="staggered-list-content">
-    <Flipper :flipKey="key" :staggerConfig="staggerConfig" spring="gentle">
+    <Flipper :flipKey="focused" :staggerConfig="staggerConfig" spring="gentle">
       <ul class="list">
         <li @click="toggleItem(index)" v-for="(num,index) in list" :key="index">
           <Flipped
@@ -84,7 +84,6 @@ export default {
   },
   data() {
     return {
-      previouslyFocused: null,
       focused: null,
       list: [
         {
@@ -112,8 +111,8 @@ export default {
       console.log("Finished", el, id);
     },
     shouldFlip(index) {
-      return () => {
-        return index === this.previouslyFocused || index === this.focused;
+      return (prev, current) => {
+        return index === prev || index === current;
       };
     },
     toggleItem(index) {
@@ -136,11 +135,6 @@ export default {
     },
     key() {
       return this.list.map(item => item.open.toString()).join("");
-    }
-  },
-  watch: {
-    focused(nv, ov) {
-      this.previouslyFocused = ov;
     }
   }
 };

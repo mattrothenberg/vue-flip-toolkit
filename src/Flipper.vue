@@ -79,10 +79,10 @@ export default {
     this.flipInstance.recordBeforeUpdate();
   },
   watch: {
-    flipKey(nv, ov) {
-      if (nv !== ov) {
+    flipKey(newKey, oldKey) {
+      if (newKey !== oldKey) {
         this.$nextTick(() => {
-          this.flipInstance.onUpdate();
+          this.flipInstance.onUpdate(oldKey, newKey);
         });
       }
     }
