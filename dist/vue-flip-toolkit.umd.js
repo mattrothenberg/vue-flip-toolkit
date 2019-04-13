@@ -1896,7 +1896,7 @@
               inProgressAnimations: this.inProgressAnimations
           });
       };
-      Flipper.prototype.onUpdate = function () {
+      Flipper.prototype.onUpdate = function (prevDecisionData, currentDecisionData) {
           if (this.snapshot) {
               onFlipKeyUpdate({
                   flippedElementPositionsBeforeUpdate: this.snapshot
@@ -1910,7 +1910,11 @@
                   debug: this.debug,
                   staggerConfig: this.staggerConfig,
                   handleEnterUpdateDelete: this.handleEnterUpdateDelete,
-                  retainTransform: this.retainTransform
+                  retainTransform: this.retainTransform,
+                  decisionData: {
+                      prev: prevDecisionData,
+                      current: currentDecisionData
+                  }
               });
               delete this.snapshot;
           }
@@ -2054,10 +2058,10 @@
       this.flipInstance.recordBeforeUpdate();
     },
     watch: {
-      flipKey(nv, ov) {
-        if (nv !== ov) {
+      flipKey(newKey, oldKey) {
+        if (newKey !== oldKey) {
           this.$nextTick(() => {
-            this.flipInstance.onUpdate();
+            this.flipInstance.onUpdate(oldKey, newKey);
           });
         }
       }
