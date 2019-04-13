@@ -6,7 +6,19 @@ var script = {
     inverseFlipId: String,
     stagger: String,
     shouldFlip: Function,
-    shouldInvert: Function
+    shouldInvert: Function,
+    scale: {
+      type: Boolean,
+      default: false
+    },
+    opacity: {
+      type: Boolean,
+      default: false
+    },
+    translate: {
+      type: Boolean,
+      default: false
+    }
   },
   mounted() {
     if (this.flipId) {
@@ -17,12 +29,18 @@ var script = {
         shouldInvert: this.shouldInvert,
         onStart: el => this.$emit("on-start", { el, id: this.flipId }),
         onComplete: el => this.$emit("on-complete", { el, id: this.flipId }),
-        stagger: this.stagger
+        stagger: this.stagger,
+        opacity: this.opacity,
+        scale: this.scale,
+        translate: this.translate
       });
     } else if (this.inverseFlipId) {
       this.addInvertedElement({
         element: this.$el,
-        parent: this.$parent.$el
+        parent: this.$parent.$el,
+        opacity: this.opacity,
+        scale: this.scale,
+        translate: this.translate
       });
     }
   },
@@ -1967,12 +1985,12 @@ var script$1 = {
   },
   props: {
     className: String,
+    flipKey: [String, Number, Boolean],
+    staggerConfig: Object,
     spring: {
-      type: String,
+      type: [String, Object],
       default: "noWobble"
-    },
-    flipKey: String,
-    staggerConfig: Object
+    }
   },
   data() {
     return {
@@ -1988,7 +2006,10 @@ var script$1 = {
       shouldFlip,
       shouldInvert,
       onStart,
-      onComplete
+      onComplete,
+      opacity,
+      scale,
+      translate
     }) {
       this.flipInstance.addFlipped({
         element,
@@ -1997,14 +2018,20 @@ var script$1 = {
         ...(shouldFlip ? { shouldFlip } : undefined),
         ...(shouldInvert ? { shouldInvert } : undefined),
         ...(onStart ? { onStart } : undefined),
-        ...(onComplete ? { onComplete } : undefined)
+        ...(onComplete ? { onComplete } : undefined),
+        opacity,
+        scale,
+        translate
       });
     },
-    addInvertedElement({ element, parent }) {
+    addInvertedElement({ element, parent, opacity, scale, translate }) {
       this.$nextTick(() => {
         this.flipInstance.addInverted({
           element,
-          parent
+          parent,
+          opacity,
+          scale,
+          translate
         });
       });
     }
