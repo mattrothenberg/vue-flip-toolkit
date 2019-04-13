@@ -16,7 +16,6 @@ export default {
   },
   props: {
     className: String,
-    decisionData: null,
     flipKey: [String, Number, Boolean],
     staggerConfig: Object,
     spring: {
