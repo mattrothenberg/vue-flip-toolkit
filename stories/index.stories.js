@@ -7,6 +7,7 @@ import Simple from "./Simple.vue";
 import Double from "./Double.vue";
 import List from "./List.vue";
 import Accordion from "./Accordion.vue";
+import Scale from "./Scale.vue";
 
 import IconsHome from "./IconsHome.vue";
 import IconsDetail from "./IconsDetail.vue";
@@ -53,6 +54,14 @@ storiesOf("Examples", module)
         List
       },
       template: `<List></List>`
+    };
+  })
+  .add("Scale", () => {
+    return {
+      components: {
+        Scale
+      },
+      template: `<Scale></Scale>`
     };
   })
   .add("Accordion", () => {

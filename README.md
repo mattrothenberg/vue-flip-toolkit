@@ -28,12 +28,12 @@ This library strives to imitate its parent, `react-flip-toolkit`, as closely as 
 
 **Props**
 
-| prop                     | default      | type     | details                                                                                                           |
-| ------------------------ | ------------ | -------- | ----------------------------------------------------------------------------------------------------------------- |
-| `className`              | –            | `string` | A class that will apply to the div rendered by `Flipper`                                                          |
-| `flipKey` **(required)** | –            | `string` | Changing this tells `vue-flip-toolkit` to transition child elements wrapped in Flipped components.                |
-| `spring`                 | `"noWobble"` | `string` | Provide a string referencing one of the spring presets — `noWobble`, `veryGentle`, `gentle`, `wobbly`, or `stiff` |
-| `staggerConfig`          | `{}`         | `object` | Provide configuration for staggered Flipped children.                                                             |
+| prop                     | default      | type                      | details                                                                                                                                                                                                   |
+| ------------------------ | ------------ | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `className`              | –            | `string`                  | A class that will apply to the div rendered by `Flipper`                                                                                                                                                  |
+| `flipKey` **(required)** | –            | `string, number, boolean` | Changing this tells `vue-flip-toolkit` to transition child elements wrapped in Flipped components.                                                                                                        |
+| `spring`                 | `"noWobble"` | `string, object`          | Provide a string or referencing one of the spring presets — `noWobble`, `veryGentle`, `gentle`, `wobbly`, or `stiff`. Otherwise, pass a [custom spring object](https://codepen.io/aholachek/full/bKmZbV/) |
+| `staggerConfig`          | `{}`         | `object`                  | Provide configuration for staggered Flipped children.                                                                                                                                                     |
 
 ### Flipped.vue
 
@@ -48,6 +48,9 @@ This library strives to imitate its parent, `react-flip-toolkit`, as closely as 
 | `stagger`               | –       | `string`   | Provide a natural, spring-based staggering effect in which the spring easing of each item is pinned to the previous one's movement. If you want to get more granular, you can provide a string key and the element will be staggered with other elements with the same key.                                                                                     |
 | `shouldInvert`          | –       | `function` | A function provided with the current and previous `decisionData` props passed down by the Flipper component. Returns a boolean indicating whether to apply inverted transforms to all `Flipped` children that request it via an `inverseFlipId`.                                                                                                                |
 | `shouldFlip`            | –       | `function` | A function provided with the current and previous decisionData props passed down by the `Flipper` component. Returns a `boolean` to indicate whether a `Flipped` component should animate at that particular moment or not.                                                                                                                                     |
+| `opacity`               | false   | `boolean`  |                                                                                                                                                                                                                                                                                                                                                                 |
+| `scale`                 | false   | `boolean`  | Tween `scaleX` and `scaleY`                                                                                                                                                                                                                                                                                                                                     |
+| `translate`             | false   | `boolean`  | Tween `translateX` and `translateY`                                                                                                                                                                                                                                                                                                                             |
 
 **Events**
 
