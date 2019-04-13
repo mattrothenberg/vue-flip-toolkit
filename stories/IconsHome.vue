@@ -1,33 +1,28 @@
 <template>
-  <div class="grid-wrap p-4">
-    <div class="grid">
-      <div v-for="set in iconSets" :key="set.slug">
-        <Flipped :flipId="set.slug">
-          <div class="card shadow">
-            <router-link class="block no-underline text-black" :to="`/icons/${set.slug}`">
-              <div class="p-4">
-                <h1 class="text-xl mb-2">{{set.label}}</h1>
-                <div class="text-grey">
-                  <p class="flow">aspdjipasjdpoajspojasidjiaosjd</p>
-                  <p class="flow">aspdjipasjdpoajspojashdiaa</p>
-                </div>
-              </div>
-              <div class="icon-grid border-t p-4">
+  <div>
+    <div class="grid p-4">
+      <Flipped :flipId="set.slug" v-for="set in iconSets" :key="set.slug">
+        <div>
+          <Flipped :inverseFlipId="set.slug">
+            <div class="card shadow p-4" role="button" @click="handleNavigate(set.slug)">
+              <div class="icon-grid">
                 <template v-for="icon in set.icons">
                   <Flipped
                     v-if="icon.flipped"
                     :flipId="`${set.slug}-${icon.key}`"
                     :key="`${set.slug}-${icon.key}`"
+                    translate
+                    scale
                   >
                     <div class="icon flipped bg-green"></div>
                   </Flipped>
                   <div v-else class="icon bg-grey" :key="`${set.slug}-${icon.key}`"></div>
                 </template>
               </div>
-            </router-link>
-          </div>
-        </Flipped>
-      </div>
+            </div>
+          </Flipped>
+        </div>
+      </Flipped>
     </div>
   </div>
 </template>
@@ -44,6 +39,11 @@ export default {
     return {
       iconSets: iconData
     };
+  },
+  methods: {
+    handleNavigate(slug) {
+      this.$router.push(`/icons/${slug}`);
+    }
   }
 };
 </script>
@@ -72,8 +72,9 @@ export default {
 
 .icon-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 64px);
-  grid-auto-rows: 64px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 48px;
+  grid-gap: 16px;
   grid-auto-flow: dense;
 }
 </style>

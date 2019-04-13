@@ -26,6 +26,22 @@ export default [
       {
         flipped: false,
         key: "f"
+      },
+      {
+        flipped: false,
+        key: "g"
+      },
+      {
+        flipped: false,
+        key: "h"
+      },
+      {
+        flipped: true,
+        key: "i"
+      },
+      {
+        flipped: false,
+        key: "j"
       }
     ],
     count: 24
@@ -51,14 +67,30 @@ export default [
         key: "d"
       },
       {
-        flipped: true,
+        flipped: false,
         key: "e"
       },
       {
         flipped: true,
         key: "f"
+      },
+      {
+        flipped: false,
+        key: "g"
+      },
+      {
+        flipped: false,
+        key: "h"
+      },
+      {
+        flipped: true,
+        key: "i"
+      },
+      {
+        flipped: false,
+        key: "j"
       }
     ],
-    count: 30
+    count: 24
   }
 ];

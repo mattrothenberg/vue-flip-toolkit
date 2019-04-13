@@ -1,41 +1,59 @@
 <template>
-  <div>
-    <Flipped class="card-detail" :flipId="flipId" @on-complete="handleComplete">
-      <div>
-        <div class="header p-4 border-b border-grey">
-          <transition @enter="handleHeaderEnter">
-            <div v-if="loaded">
+  <Flipped :flipId="flipId" @on-complete="handleComplete">
+    <div class="card-detail">
+      <Flipped :inverseFlipId="flipId">
+        <div class="flex h-full">
+          <div class="w-1/2 border-r">
+            <div class="p-6">
               <router-link
-                class="no-underline text-xs uppercase tracking-wide inline-block mb-1"
-                :to="`/`"
+                class="text-xs text-green uppercase tracking-wide inline-block mb-2 no-underline"
+                to="/"
               >Back</router-link>
-              <h1 class="text-xl">{{ iconSet.label }}</h1>
+              <h1 class="text-xl mb-4 font-semibold">{{ iconSet.label }}</h1>
+              <p
+                class="flow text-grey"
+              >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto beatae iure omnis magnam perspiciatis voluptatibus, sunt vero quam debitis vitae consectetur voluptas molestias inventore reprehenderit quae aliquam veniam ad eius.</p>
+              <p
+                class="flow text-grey my-3"
+              >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto beatae iure omnis magnam perspiciatis voluptatibus, sunt vero quam debitis vitae consectetur voluptas molestias inventore reprehenderit quae aliquam veniam ad eius.</p>
+              <p
+                class="flow text-grey my-3"
+              >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto beatae iure omnis magnam perspiciatis voluptatibus, sunt vero quam debitis vitae consectetur voluptas molestias inventore reprehenderit quae aliquam veniam ad eius.</p>
             </div>
-          </transition>
-        </div>
-        <div class="p-4">
-          <div class="icon-grid mt-4">
-            <template v-for="icon in iconSet.icons">
-              <Flipped
-                v-if="icon.flipped"
-                :flipId="`${iconSet.slug}-${icon.key}`"
-                :key="`${iconSet.slug}-${icon.key}`"
-              >
-                <div class="icon flipped bg-green"></div>
-              </Flipped>
-              <div v-else class="icon bg-grey" :key="`${iconSet.slug}-${icon.key}`"></div>
-            </template>
+          </div>
+          <div class="w-1/2 p-6 overflow-y-auto">
+            <div class="icon-grid">
+              <template v-for="icon in fullIconSet">
+                <Flipped
+                  v-if="icon.flipped"
+                  :flipId="`${iconSet.slug}-${icon.key}`"
+                  :key="`${iconSet.slug}-${icon.key}`"
+                >
+                  <div class="icon flipped bg-green"></div>
+                </Flipped>
+                <div v-else class="icon bg-grey" :key="`${iconSet.slug}-${icon.key}`"></div>
+              </template>
+            </div>
           </div>
         </div>
-      </div>
-    </Flipped>
-  </div>
+      </Flipped>
+    </div>
+  </Flipped>
 </template>
 
 <script>
 import Flipped from "../src/Flipped";
 import anime from "animejs";
 import iconData from "./icon-data";
+
+const shuffle = ([...arr]) => {
+  let m = arr.length;
+  while (m) {
+    const i = Math.floor(Math.random() * m--);
+    [arr[m], arr[i]] = [arr[i], arr[m]];
+  }
+  return arr;
+};
 
 export default {
   name: "IconsHome",
@@ -54,6 +72,13 @@ export default {
     },
     flipId() {
       return this.$route.params.set;
+    },
+    fullIconSet() {
+      const randomIcons = Array.from(Array(20), (x, index) => ({
+        flipped: false,
+        key: index.toString()
+      }));
+      return shuffle(this.iconSet.icons.concat(randomIcons));
     }
   },
   methods: {
@@ -89,17 +114,31 @@ export default {
   min-height: 77px;
 }
 
+.icon {
+  width: 64px;
+  height: 64px;
+}
+
 .icon:not(.flipped) {
   opacity: 0;
 }
+
 .card-detail {
-  background: white;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   width: 100%;
   height: 100%;
+  background: white;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 64px;
+  grid-gap: 24px;
+  grid-auto-flow: dense;
 }
 </style>
