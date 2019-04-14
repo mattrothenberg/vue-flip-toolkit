@@ -121,6 +121,7 @@ You got it.
 
 ### 6) Material Design inspired animation
 [Source](stories/Material.vue)
+
 <img width="600" src="https://i.imgur.com/b00260y.gif" />
 
 ### 7) Vue Router Example
