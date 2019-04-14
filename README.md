@@ -119,7 +119,12 @@ You got it.
 
 <img width="600" src="https://i.imgur.com/BpQvrfG.gif" />
 
-### 6) Vue Router Example
+### 6) Material Design inspired animation
+[Source](stories/Material.vue)
+
+<img width="600" src="https://i.imgur.com/b00260y.gif" />
+
+### 7) Vue Router Example
 
 This example is very much a WIP. Nonetheless, it illustrates at a high-level how to use `vue-flip-toolkit` with `vue-router`, as well as hook into the `@on-complete` and `@on-start` events.
 

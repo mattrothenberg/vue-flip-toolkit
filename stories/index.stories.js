@@ -8,6 +8,7 @@ import Double from "./Double.vue";
 import List from "./List.vue";
 import Accordion from "./Accordion.vue";
 import Scale from "./Scale.vue";
+import Material from "./Material.vue";
 
 import IconsHome from "./IconsHome.vue";
 import IconsDetail from "./IconsDetail.vue";
@@ -32,6 +33,9 @@ storiesOf("Routing", module)
   .add("Example", () => IconsRouterWrap);
 
 storiesOf("Examples", module)
+  .addParameters({
+    backgrounds: [{ name: "grey", value: "#e6e6e6" }]
+  })
   .add("Expanding Div", () => {
     return {
       components: {
@@ -70,5 +74,13 @@ storiesOf("Examples", module)
         Accordion
       },
       template: `<Accordion></Accordion>`
+    };
+  })
+  .add("Material Design", () => {
+    return {
+      components: {
+        Material
+      },
+      template: `<Material></Material>`
     };
   });
