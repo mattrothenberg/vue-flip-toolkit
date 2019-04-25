@@ -9,6 +9,7 @@ import List from "./List.vue";
 import Accordion from "./Accordion.vue";
 import Scale from "./Scale.vue";
 import Material from "./Material.vue";
+import Android from "./Android.vue";
 
 import IconsHome from "./IconsHome.vue";
 import IconsDetail from "./IconsDetail.vue";
@@ -82,5 +83,13 @@ storiesOf("Examples", module)
         Material
       },
       template: `<Material></Material>`
+    };
+  })
+  .add("Android Home Screen", () => {
+    return {
+      components: {
+        Android
+      },
+      template: `<Android></Android>`
     };
   });
