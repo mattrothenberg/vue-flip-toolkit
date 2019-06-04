@@ -1,5 +1,7 @@
 ## vue-flip-toolkit
 
+[![Vue Flip Toolkit Version Badge](https://img.shields.io/npm/v/vue-flip-toolkit.svg?style=for-the-badge&color=ff4f66)](https://www.npmjs.com/package/vue-flip-toolkit)
+
 A Vue.js port of the wonderful [`react-flip-toolkit`](https://github.com/aholachek/react-flip-toolkit), developed by [@aholachek](https://github.com/aholachek) (to whom all credit is due here)
 
 ## Quick Start
