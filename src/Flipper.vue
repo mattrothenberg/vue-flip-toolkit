@@ -85,6 +85,11 @@ export default {
           this.flipInstance.update(oldKey, newKey);
         });
       }
+    },
+    staggerConfig(oldConfig, newConfig) {
+      if (newConfig !== oldConfig) {
+        this.flipInstance.staggerConfig = newConfig;
+      }
     }
   }
 };
