@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Flipper from "react-flip-toolkit/es/core";
+import { Flipper } from "flip-toolkit";
 export default {
   name: "flipper",
   provide() {
@@ -82,7 +82,7 @@ export default {
     flipKey(newKey, oldKey) {
       if (newKey !== oldKey) {
         this.$nextTick(() => {
-          this.flipInstance.onUpdate(oldKey, newKey);
+          this.flipInstance.update(oldKey, newKey);
         });
       }
     }

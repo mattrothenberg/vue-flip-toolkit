@@ -3794,6 +3794,13 @@ find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
+flip-toolkit@^7.0.6:
+  version "7.0.6"
+  resolved "https://registry.yarnpkg.com/flip-toolkit/-/flip-toolkit-7.0.6.tgz#eec6fe8003334879dc7b129d1d9b557e407c8d21"
+  integrity sha512-BtL9dm4a0Oh+Q9a5JBfI+VaasjHjDdkuexV5Q6bAnFqnQU3KQrhgT2QLIAlVGf0xOMzsfGudOutTQgHOS2QyKA==
+  dependencies:
+    react-flip-toolkit "^7.0.6"
+
 flush-write-stream@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/flush-write-stream/-/flush-write-stream-1.1.1.tgz#8dd7d873a1babc207d94ead0c2e0e44276ebf2e8"
@@ -6212,10 +6219,10 @@ react-fast-compare@^2.0.2:
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
   integrity sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==
 
-react-flip-toolkit@^6.5.8:
-  version "6.5.9"
-  resolved "https://registry.yarnpkg.com/react-flip-toolkit/-/react-flip-toolkit-6.5.9.tgz#c8ad78a8cf651f98526c15a51d2f4d63e722090e"
-  integrity sha512-0im7XXPBQIS4jiXQTfc5huDEYyNeWtCAZjkytJPMT3P8qroul/ii9SX5ijqHwPUIblttZUYrOSKkdFdPHHHZcw==
+react-flip-toolkit@^7.0.6:
+  version "7.0.6"
+  resolved "https://registry.yarnpkg.com/react-flip-toolkit/-/react-flip-toolkit-7.0.6.tgz#eb4b6f17c00f92084a817ce8b4f69dda2a11fdc3"
+  integrity sha512-zZpwNfAGS8/WRrHKOA224NP2aVG4ryVx9vkTkxFsU7tkGUpM5AvjsICYmOVDJhEl5wmR36SjMSmWFicloJVibA==
   dependencies:
     rematrix "0.2.2"
 
