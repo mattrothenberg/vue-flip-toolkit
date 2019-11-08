@@ -33,6 +33,7 @@ export default {
     addFlippedElement({
       element,
       flipId,
+      delayUntil,
       stagger,
       shouldFlip,
       shouldInvert,
@@ -45,6 +46,7 @@ export default {
       this.flipInstance.addFlipped({
         element,
         flipId,
+        ...(delayUntil ? { delayUntil } : undefined),
         ...(stagger ? { stagger } : undefined),
         ...(shouldFlip ? { shouldFlip } : undefined),
         ...(shouldInvert ? { shouldInvert } : undefined),

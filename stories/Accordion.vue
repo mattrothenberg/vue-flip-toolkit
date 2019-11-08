@@ -1,12 +1,49 @@
 <template>
-  <Flipper :flipKey="focused" spring="gentle" :staggerConfig="staggerConfig">
+  <Flipper :flipKey="focused" :staggerConfig="staggerConfig">
     <div class="m-4">
       <div v-for="(num, index) in list" :key="index">
-        <Flipped :flipId="`card-${index}`" v-if="index !== focused" stagger="card">
-          <div @click="toggleItem(index)" role="button" class="bg-grey h-8 my-4"></div>
+        <Flipped
+          :shouldInvert="shouldFlip(index)"
+          :flipId="`card-${index}`"
+          v-if="index !== focused"
+          stagger="card"
+        >
+          <div
+            @click="toggleItem(index)"
+            role="button"
+            class="bg-grey h-8 my-4 flex items-center p-4"
+          >
+            <Flipped :inverseFlipId="`card-${index}`">
+              <div>
+                <Flipped
+                  :delayUntil="`card-${index}`"
+                  :shouldFlip="shouldFlip(index)"
+                  :flipId="`avatar-card-${index}`"
+                >
+                  <div class="bg-grey-dark rounded-full w-3 h-3"></div>
+                </Flipped>
+              </div>
+            </Flipped>
+          </div>
         </Flipped>
         <Flipped :flipId="`card-${index}`" v-else stagger="card">
-          <div @click="toggleItem(index)" role="button" class="bg-grey h-32 my-4"></div>
+          <div
+            @click="toggleItem(index)"
+            role="button"
+            class="bg-grey h-32 my-4 flex items-center justify-center p-4"
+          >
+            <Flipped :inverseFlipId="`card-${index}`">
+              <div>
+                <Flipped
+                  delayUntil="foo"
+                  :shouldFlip="shouldFlip(index)"
+                  :flipId="`avatar-card-${index}`"
+                >
+                  <div class="bg-grey-dark rounded-full w-12 h-12"></div>
+                </Flipped>
+              </div>
+            </Flipped>
+          </div>
         </Flipped>
       </div>
     </div>
@@ -26,11 +63,10 @@ export default {
   data() {
     return {
       focused: null,
-      list: Array(6)
+      list: Array(8)
         .fill()
         .map(() => ({
-          open: false,
-          description: ["a", "b", "c"]
+          open: false
         }))
     };
   },
@@ -60,7 +96,6 @@ export default {
       return {
         card: {
           reverse: this.focused === null,
-          // reverse: true,
           speed: 0.1
         }
       };

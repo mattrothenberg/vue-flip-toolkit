@@ -5,6 +5,7 @@ export default {
   props: {
     flipId: String,
     inverseFlipId: String,
+    delayUntil: String,
     stagger: [String, Boolean],
     shouldFlip: Function,
     shouldInvert: Function,
@@ -26,6 +27,7 @@ export default {
       this.addFlippedElement({
         element: this.$el,
         flipId: this.flipId,
+        delayUntil: this.delayUntil,
         shouldFlip: this.shouldFlip,
         shouldInvert: this.shouldInvert,
         onStart: el => this.$emit("on-start", { el, id: this.flipId }),
