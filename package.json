@@ -13,7 +13,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "react-flip-toolkit": "^6.5.8"
+    "flip-toolkit": "^7.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",
