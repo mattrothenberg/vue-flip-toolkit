@@ -61,6 +61,14 @@ storiesOf("Examples", module)
       template: `<List></List>`
     };
   })
+  .add("List Shuffle (Stagger)", () => {
+    return {
+      components: {
+        List
+      },
+      template: `<List :stagger="true"></List>`
+    };
+  })
   .add("Scale", () => {
     return {
       components: {

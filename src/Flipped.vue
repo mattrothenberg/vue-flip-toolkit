@@ -5,7 +5,7 @@ export default {
   props: {
     flipId: String,
     inverseFlipId: String,
-    stagger: String,
+    stagger: [String, Boolean],
     shouldFlip: Function,
     shouldInvert: Function,
     scale: {

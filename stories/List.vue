@@ -6,7 +6,7 @@
         @click="shuffle"
       >shuffle</button>
       <ul class="list mt-4">
-        <Flipped v-for="num in list" :key="num" :flipId="num.toString()">
+        <Flipped v-for="num in list" :key="num" :flipId="num.toString()" :stagger="stagger">
           <li>{{num}}</li>
         </Flipped>
       </ul>
@@ -28,6 +28,7 @@ import Flipped from "../src/Flipped";
 
 export default {
   name: "list",
+  props: ["stagger"],
   components: {
     Flipper,
     Flipped
