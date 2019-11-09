@@ -3,43 +3,35 @@
     <div class="m-4">
       <div v-for="(num, index) in list" :key="index">
         <Flipped
-          :shouldInvert="shouldFlip(index)"
           :flipId="`card-${index}`"
-          v-if="index !== focused"
           stagger="card"
+          :shouldInvert="shouldFlip(index)"
+          v-if="index !== focused"
         >
-          <div
-            @click="toggleItem(index)"
-            role="button"
-            class="bg-grey h-8 my-4 flex items-center p-4"
-          >
-            <Flipped :inverseFlipId="`card-${index}`">
+          <div @click="toggleItem(index)" role="button" class="bg-grey my-4">
+            <Flipped class="min-h-4 p-4" :inverseFlipId="`card-${index}`">
               <div>
                 <Flipped
                   :delayUntil="`card-${index}`"
                   :shouldFlip="shouldFlip(index)"
                   :flipId="`avatar-card-${index}`"
                 >
-                  <div class="bg-grey-dark rounded-full w-3 h-3"></div>
+                  <div class="inline-block bg-grey-dark rounded-full w-3 h-3"></div>
                 </Flipped>
               </div>
             </Flipped>
           </div>
         </Flipped>
         <Flipped :flipId="`card-${index}`" v-else stagger="card">
-          <div
-            @click="toggleItem(index)"
-            role="button"
-            class="bg-grey h-32 my-4 flex items-center justify-center p-4"
-          >
-            <Flipped :inverseFlipId="`card-${index}`">
+          <div @click="toggleItem(index)" role="button" class="bg-grey my-4 text-center">
+            <Flipped class="h-32 p-4" :inverseFlipId="`card-${index}`">
               <div>
                 <Flipped
-                  delayUntil="foo"
+                  :delayUntil="`card-${index}`"
                   :shouldFlip="shouldFlip(index)"
                   :flipId="`avatar-card-${index}`"
                 >
-                  <div class="bg-grey-dark rounded-full w-12 h-12"></div>
+                  <div class="inline-block bg-grey-dark rounded-full w-12 h-12"></div>
                 </Flipped>
               </div>
             </Flipped>
@@ -65,18 +57,13 @@ export default {
       focused: null,
       list: Array(8)
         .fill()
-        .map(() => ({
-          open: false
+        .map((_, i) => ({
+          open: false,
+          label: `Card ${i + 1}`
         }))
     };
   },
   methods: {
-    handleStart({ el, id }) {
-      setTimeout(() => {
-        el.classList.add("animated-in");
-      }, 600);
-    },
-    handleComplete({ el, id }) {},
     shouldFlip(index) {
       return (prev, current) => {
         return index === prev || index === current;
@@ -96,7 +83,7 @@ export default {
       return {
         card: {
           reverse: this.focused === null,
-          speed: 0.1
+          speed: 1
         }
       };
     },

@@ -35,6 +35,6 @@
     "vue-template-compiler": "^2.6.10"
   },
   "dependencies": {
-    "flip-toolkit": "^7.0.6"
+    "flip-toolkit": "^7.0.7"
   }
 }
