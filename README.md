@@ -48,6 +48,7 @@ This library strives to imitate its parent, `react-flip-toolkit`, as closely as 
 | `flipId` **(required)** | –       | `string`   | Use this to tell `vue-flip-toolkit` how elements should be matched across renders so they can be animated.                                                                                                                                                                                                                                                      |
 | `inverseFlipId`         | –       | `string`   | Refer to the id of the parent `Flipped` container whose transform you want to cancel out. If this prop is provided, the `Flipped` component will become a limited version of itself that is only responsible for cancelling out its parent transform. It will read from any provided transform props and will ignore all other props (besides `inverseFlipId`.) |
 | `stagger`               | –       | `string`   | Provide a natural, spring-based staggering effect in which the spring easing of each item is pinned to the previous one's movement. If you want to get more granular, you can provide a string key and the element will be staggered with other elements with the same key.                                                                                     |
+| `delayUntil`            | –       | `string`   | Delay an animation by providing a reference to another Flipped component that it should wait for before animating (the other Flipped component should have a stagger delay as that is the only use case in which this prop is necessary.)                                                                                                                       |
 | `shouldInvert`          | –       | `function` | A function provided with the current and previous `decisionData` props passed down by the Flipper component. Returns a boolean indicating whether to apply inverted transforms to all `Flipped` children that request it via an `inverseFlipId`.                                                                                                                |
 | `shouldFlip`            | –       | `function` | A function provided with the current and previous decisionData props passed down by the `Flipper` component. Returns a `boolean` to indicate whether a `Flipped` component should animate at that particular moment or not.                                                                                                                                     |
 | `opacity`               | false   | `boolean`  |                                                                                                                                                                                                                                                                                                                                                                 |
@@ -117,11 +118,13 @@ You got it.
 [Fantastic Tutorial](https://alex.holachek.com/rft-tutorial/)
 
 ### 5) Scale Animation + Anime.js
+
 [Source](stories/Scale.vue)
 
 <img width="600" src="https://i.imgur.com/BpQvrfG.gif" />
 
 ### 6) Material Design inspired animation
+
 [Source](stories/Material.vue)
 
 <img width="600" src="https://i.imgur.com/b00260y.gif" />
