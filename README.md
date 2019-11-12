@@ -112,24 +112,33 @@ You got it.
 
 <img width="600" src="https://i.imgur.com/PWGSyKm.gif" />
 
-### 4) Advanced Accordion
+### 4) List Shuffle Animation (Staggered)
+
+[Source](stories/List.vue)
+
+<img width="600" src="https://i.imgur.com/at4wCpg.gif" />
+
+
+### 5) Accordion (Staggered)
 
 [Source](stories/Accordion.vue)
-[Fantastic Tutorial](https://alex.holachek.com/rft-tutorial/)
 
-### 5) Scale Animation + Anime.js
+<img width="600" src="https://i.imgur.com/okjVltu.gif" />
+
+
+### 6) Scale Animation + Anime.js
 
 [Source](stories/Scale.vue)
 
 <img width="600" src="https://i.imgur.com/BpQvrfG.gif" />
 
-### 6) Material Design inspired animation
+### 7) Material Design inspired animation
 
 [Source](stories/Material.vue)
 
 <img width="600" src="https://i.imgur.com/b00260y.gif" />
 
-### 7) Vue Router Example
+### 8) Vue Router Example
 
 This example is very much a WIP. Nonetheless, it illustrates at a high-level how to use `vue-flip-toolkit` with `vue-router`, as well as hook into the `@on-complete` and `@on-start` events.
 
