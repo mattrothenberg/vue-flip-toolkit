@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Flipper :flipKey="key" stagger="gentle">
+    <Flipper :flip-key="key" stagger="gentle">
       <router-view/>
     </Flipper>
   </div>

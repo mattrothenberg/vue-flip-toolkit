@@ -1,18 +1,18 @@
 <template>
   <div>
-    <Flipper :flipKey="focused">
+    <Flipper :flip-key="focused">
       <div class="flex items-center h-screen justify-center" v-if="focused === null">
         <div v-for="color in colors" :key="color">
-          <Flipped :flipId="color" translate scale>
+          <Flipped :flip-id="color" translate scale>
             <div
               class="mx-3"
               @click="setFocused(color)"
               role="button"
               :style="{backgroundColor: color}"
             >
-              <Flipped :inverseFlipId="color">
+              <Flipped :inverse-flip-id="color">
                 <div class="square font-mono text-xs flex items-center justify-center text-white">
-                  <Flipped :flipId="`hex-${color}`">
+                  <Flipped :flip-id="`hex-${color}`">
                     <span>{{ color }}</span>
                   </Flipped>
                 </div>
@@ -21,16 +21,16 @@
           </Flipped>
         </div>
       </div>
-      <Flipped :flipId="focused" v-else @on-start="handleStart">
+      <Flipped :flip-id="focused" v-else @on-start="handleStart">
         <div
           @click="setFocused(focused)"
           class="full-screen-square flex flex-col"
           :style="{backgroundColor: focused}"
         >
-          <Flipped :inverseFlipId="focused">
+          <Flipped :inverse-flip-id="focused">
             <div class="flex-auto">
               <div class="font-mono text-xs text-white p-4 text-center font-bold">
-                <Flipped :flipId="`hex-${focused}`">
+                <Flipped :flip-id="`hex-${focused}`">
                   <span>{{ focused }}</span>
                 </Flipped>
               </div>

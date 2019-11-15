@@ -1,7 +1,7 @@
 <template>
-  <Flipped :flipId="flipId" @on-complete="handleComplete">
+  <Flipped :flip-id="flipId" @on-complete="handleComplete">
     <div class="card-detail">
-      <Flipped :inverseFlipId="flipId">
+      <Flipped :inverse-flip-id="flipId">
         <div class="flex h-full">
           <div class="w-1/2 border-r">
             <div class="p-6">
@@ -26,7 +26,7 @@
               <template v-for="icon in fullIconSet">
                 <Flipped
                   v-if="icon.flipped"
-                  :flipId="`${iconSet.slug}-${icon.key}`"
+                  :flip-id="`${iconSet.slug}-${icon.key}`"
                   :key="`${iconSet.slug}-${icon.key}`"
                 >
                   <div class="icon flipped bg-green"></div>

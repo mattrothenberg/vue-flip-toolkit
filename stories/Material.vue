@@ -1,10 +1,10 @@
 <template>
   <div class="flex items-center justify-center h-screen">
-    <Flipper :flipKey="toggled">
+    <Flipper :flip-key="toggled">
       <div class="phone shadow bg-white relative">
         <div class="screen bg-grey"></div>
         <div class="body bg-red"></div>
-        <Flipped flipId="fab" v-if="!toggled">
+        <Flipped flip-id="fab" v-if="!toggled">
           <div
             tabindex="0"
             ref="showSlidePanel"
@@ -14,7 +14,7 @@
             class="fab bg-pink w-16 h-16 rounded-full absolute"
           ></div>
         </Flipped>
-        <Flipped flipId="fab" v-if="toggled" @on-complete="handleEnter">
+        <Flipped flip-id="fab" v-if="toggled" @on-complete="handleEnter">
           <div role="button" class="bg-pink w-full h-full pin absolute overflow-hidden">
             <transition @enter="handleSlidePanelLoaded" @leave="handleSlidePanelOut">
               <div

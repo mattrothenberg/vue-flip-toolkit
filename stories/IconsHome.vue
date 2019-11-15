@@ -1,15 +1,15 @@
 <template>
   <div>
     <div class="grid p-4">
-      <Flipped :flipId="set.slug" v-for="set in iconSets" :key="set.slug">
+      <Flipped :flip-id="set.slug" v-for="set in iconSets" :key="set.slug">
         <div>
-          <Flipped :inverseFlipId="set.slug">
+          <Flipped :inverse-flip-id="set.slug">
             <div class="card shadow p-4" role="button" @click="handleNavigate(set.slug)">
               <div class="icon-grid">
                 <template v-for="icon in set.icons">
                   <Flipped
                     v-if="icon.flipped"
-                    :flipId="`${set.slug}-${icon.key}`"
+                    :flip-id="`${set.slug}-${icon.key}`"
                     :key="`${set.slug}-${icon.key}`"
                     translate
                     scale

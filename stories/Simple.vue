@@ -4,8 +4,8 @@
       class="bg-grey text-grey-darkest uppercase text-xs font-bold tracking-wide p-2"
       @click="trigger"
     >Trigger Animation</button>
-    <Flipper :flipKey="flipKey">
-      <Flipped flipId="square">
+    <Flipper :flip-key="flipKey">
+      <Flipped flip-id="square">
         <div class="square" :class="squareClass"></div>
       </Flipped>
     </Flipper>
