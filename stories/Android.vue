@@ -1,6 +1,6 @@
 <template>
   <div class="h-screen flex items-center justify-center">
-    <Flipper :flipKey="focused" spring="stiff">
+    <Flipper :flip-key="focused" spring="stiff">
       <div class="phone shadow relative z-0" :class="phoneClass">
         <div class="wallpaper absolute pin w-full h-full"></div>
         <div class="h-full">
@@ -10,10 +10,10 @@
                 <Flipped
                   v-for="icon in folder.icons.slice(0, 4)"
                   :key="`${folder.id}-${icon}`"
-                  :flipId="`${folder.id}-${icon}`"
+                  :flip-id="`${folder.id}-${icon}`"
                 >
                   <div>
-                    <Flipped :inverseFlipId="`${folder.id}-${icon}`">
+                    <Flipped :inverse-flip-id="`${folder.id}-${icon}`">
                       <div class="icon"></div>
                     </Flipped>
                   </div>
@@ -39,7 +39,7 @@
                   <Flipped
                     v-for="icon in folders[focused].icons"
                     :key="`${folders[focused].id}-${icon}`"
-                    :flipId="`${folders[focused].id}-${icon}`"
+                    :flip-id="`${folders[focused].id}-${icon}`"
                   >
                     <div>
                       <div class="h-10 w-10 mx-auto bg-white rounded-sm flex items-end pb-2 pl-2">

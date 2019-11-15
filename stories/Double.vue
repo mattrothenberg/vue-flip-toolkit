@@ -1,10 +1,10 @@
 <template>
   <div class="wrap">
-    <Flipper :flipKey="key">
-      <Flipped :on-start="handleStart" flipId="square" v-if="!open">
+    <Flipper :flip-key="key">
+      <Flipped :on-start="handleStart" flip-id="square" v-if="!open">
         <div class="square" @click="toggle"></div>
       </Flipped>
-      <Flipped flipId="square" v-else>
+      <Flipped flip-id="square" v-else>
         <div class="full-screen-square" @click="toggle"></div>
       </Flipped>
     </Flipper>

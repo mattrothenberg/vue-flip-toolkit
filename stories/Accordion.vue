@@ -1,20 +1,20 @@
 <template>
-  <Flipper :flipKey="focused" :staggerConfig="staggerConfig">
+  <Flipper :flip-key="focused" :stagger-config="staggerConfig">
     <div class="m-4">
       <div v-for="(num, index) in list" :key="index">
         <Flipped
-          :flipId="`card-${index}`"
+          :flip-id="`card-${index}`"
           stagger="card"
-          :shouldInvert="shouldFlip(index)"
+          :should-invert="shouldFlip(index)"
           v-if="index !== focused"
         >
           <div @click="toggleItem(index)" role="button" class="bg-grey my-4">
-            <Flipped class="min-h-4 p-4" :inverseFlipId="`card-${index}`">
+            <Flipped class="min-h-4 p-4" :inverse-flip-id="`card-${index}`">
               <div>
                 <Flipped
-                  :delayUntil="`card-${index}`"
-                  :shouldFlip="shouldFlip(index)"
-                  :flipId="`avatar-card-${index}`"
+                  :delay-until="`card-${index}`"
+                  :should-flip="shouldFlip(index)"
+                  :flip-id="`avatar-card-${index}`"
                 >
                   <div class="inline-block bg-grey-dark rounded-full w-3 h-3"></div>
                 </Flipped>
@@ -22,14 +22,14 @@
             </Flipped>
           </div>
         </Flipped>
-        <Flipped :flipId="`card-${index}`" v-else stagger="card">
+        <Flipped :flip-id="`card-${index}`" v-else stagger="card">
           <div @click="toggleItem(index)" role="button" class="bg-grey my-4 text-center">
-            <Flipped class="h-32 p-4" :inverseFlipId="`card-${index}`">
+            <Flipped class="h-32 p-4" :inverse-flip-id="`card-${index}`">
               <div>
                 <Flipped
-                  :delayUntil="`card-${index}`"
-                  :shouldFlip="shouldFlip(index)"
-                  :flipId="`avatar-card-${index}`"
+                  :delay-until="`card-${index}`"
+                  :should-flip="shouldFlip(index)"
+                  :flip-id="`avatar-card-${index}`"
                 >
                   <div class="inline-block bg-grey-dark rounded-full w-12 h-12"></div>
                 </Flipped>

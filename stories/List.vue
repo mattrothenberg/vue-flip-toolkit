@@ -1,12 +1,12 @@
 <template>
   <div class="p-4">
-    <Flipper :flipKey="key">
+    <Flipper :flip-key="key">
       <button
         class="bg-grey text-grey-darkest uppercase text-xs font-bold tracking-wide p-2"
         @click="shuffle"
       >shuffle</button>
       <ul class="list mt-4">
-        <Flipped v-for="num in list" :key="num" :flipId="num.toString()" :stagger="stagger">
+        <Flipped v-for="num in list" :key="num" :flip-id="num.toString()" :stagger="stagger">
           <li>{{num}}</li>
         </Flipped>
       </ul>
