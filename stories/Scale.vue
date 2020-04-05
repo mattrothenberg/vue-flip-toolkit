@@ -80,7 +80,7 @@ export default {
       anime({
         targets: squares,
         opacity: [0, 1],
-        delay: anime.stagger(40, { easing: "easeINQuad" })
+        delay: anime.stagger(40, { easing: "easeInQuad" })
       });
     }
   }
