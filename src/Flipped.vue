@@ -48,7 +48,7 @@ export default {
     }
   },
   render() {
-    return this.$scopedSlots.default({});
+    return this.$scopedSlots.default()[0];
   }
 };
 </script>
